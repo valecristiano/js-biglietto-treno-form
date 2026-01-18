@@ -4,26 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calcola il prezzo del tuo biglietto</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
     <script src="./script.js" defer></script>
   </head>
+
   <body>
-    <form id="ticket-form" action="#">
-      <input type="text" id="ticket-name" />
-      <input type="number" id="ticket-km" />
-      <select name="age" id="ticket-age">
-        <option value="Maggiorenne">Maggiorenne</option>
-        <option value="Minorenne">Minorenne</option>
-        <option value="Over65">Over65</option>
-      </select>
-      <button type="submit">Genera</button>
-      <button id="annulla" type="reset">Annulla</button>
-    </form>
-    <div id="ticket" class="d-none">
-      <div class="passenger-name"></div>
-      <div class="passenger-promo"></div>
-      <div class="passenger-seat"></div>
-      <div class="passenger-code"></div>
-      <div class="passenger-price"></div>
+    <header class="bg-danger py-2">
+      <div class="container">
+        <img src="./img/Trenitalia_logo.png" alt="Trenitalia" class="img-fluid" width="250px" />
+      </div>
+    </header>
+
+    <div class="container card m-4">
+      <h1 class="m-4 card-header">Calcola il tuo biglietto</h1>
+      <form id="ticket-form" action="#" class="row m-4 g-3">
+        <div class="col-4">
+          <label for="ticket-name" class="form-label">Nome e Cognome</label>
+          <input required type="text" id="ticket-name" class="form-control" />
+        </div>
+        <div class="col-4">
+          <label for="ticket-km" class="form-label">Km da percorrere</label>
+          <input required type="number" id="ticket-km" class="form-control" />
+        </div>
+        <div class="col-4">
+          <label for="ticket-age" class="d-block form-label">Età</label>
+          <select name="age" id="ticket-age" class="form-select">
+            <option value="Maggiorenne">Maggiorenne</option>
+            <option value="Minorenne">Minorenne</option>
+            <option value="Over65">Over65</option>
+          </select>
+        </div>
+        <div class="col-6 text-end">
+          <button type="submit" class="btn btn-dark">Genera</button>
+        </div>
+        <div class="col-6 text-start">
+          <button id="annulla" type="reset" class="btn btn-dark">Annulla</button>
+        </div>
+      </form>
+    </div>
+    <div class="container m-4">
+      <div id="ticket" class="card">
+        <div class="card-header bg-dark text-white">
+          <h2 class="h5 mb-0">Il tuo biglietto</h2>
+        </div>
+        <div class="card-body">
+          <div class="row text-center fw-semibold">
+            <div class="col-2">Passeggero</div>
+            <div class="col-2">Offerta</div>
+            <div class="col-2">Carrozza</div>
+            <div class="col-2">Codice</div>
+            <div class="col-2">Prezzo</div>
+          </div>
+          <div class="row text-center">
+            <div class="passenger-name col-2"></div>
+            <div class="passenger-promo col-2"></div>
+            <div class="passenger-seat col-2"></div>
+            <div class="passenger-code col-2"></div>
+            <div class="passenger-price col-2"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
