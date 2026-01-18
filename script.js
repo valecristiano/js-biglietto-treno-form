@@ -12,6 +12,7 @@ const passengerPromo = document.querySelector(".passenger-promo");
 const passengerSeat = document.querySelector(".passenger-seat");
 const passengerCode = document.querySelector(".passenger-code");
 const passengerPrice = document.querySelector(".passenger-price");
+let promoPasseggero = "";
 
 // Variabili prezzi
 const prezzoPerKm = 0.21;
@@ -27,12 +28,15 @@ formBiglietti.addEventListener("submit", (event) => {
   if (etaPasseggero.value === "Minorenne") {
     const prezzoPieno = kmPercorsi.valueAsNumber * prezzoPerKm;
     prezzoFinale = prezzoPieno - (prezzoPieno * scontoMinorenni) / 100;
+    promoPasseggero = "Sconto Minorenni";
   } else if (etaPasseggero.value === "Over65") {
     const prezzoPieno = kmPercorsi.valueAsNumber * prezzoPerKm;
     prezzoFinale = prezzoPieno - (prezzoPieno * scontoOver65) / 100;
+    promoPasseggero = "Sconto Over65";
   } else if (etaPasseggero.value === "Maggiorenne") {
     const prezzoPieno = kmPercorsi.valueAsNumber * prezzoPerKm;
     prezzoFinale = prezzoPieno;
+    promoPasseggero = "Tariffa regolare";
   }
 
   console.log("Nome", nomePassegero.value);
@@ -40,16 +44,22 @@ formBiglietti.addEventListener("submit", (event) => {
   console.log("età", etaPasseggero.value);
   console.log("prezzoFinale", prezzoFinale);
 
+  //Biglietto
+
   if (prezzoFinale) {
     passengerTicket.classList.remove("d-none");
     passengerNAme.innerText = `${nomePassegero.value}`;
-    passengerPromo.innerText = 0;
-    passengerSeat.innerText = 0;
-    passengerCode.innerText = 0;
+    passengerPromo.innerText = `${promoPasseggero}`;
+    passengerSeat.innerText = `${generateCasualNumber(10, 100)}`;
+    passengerCode.innerText = `${generateCasualNumber(1000, 10000)}`;
     passengerPrice.innerText = `${prezzoFinale.toFixed(2)}€`;
   }
 });
 
+function generateCasualNumber(min, max) {
+  let number = Math.floor(Math.random() * (max - min + 1)) + min;
+  return number;
+}
 // const annulla = document.getElementById("annulla");
 
 // annulla.addEventListener("click", () => {
