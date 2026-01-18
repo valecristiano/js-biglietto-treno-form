@@ -7,11 +7,15 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <form action="#">
-      <input type="text" />
-      <input type="text" />
-      <select name="" id=""></select>
-      <button>Genera</button>
+    <form id="ticket-form" action="#">
+      <input type="text" id="ticket-name" />
+      <input type="number" id="ticket-km" />
+      <select name="age" id="ticket-age">
+        <option value="Maggiorenne">Maggiorenne</option>
+        <option value="Minorenne">Minorenne</option>
+        <option value="Over65">Over65</option>
+      </select>
+      <button type="submit">Genera</button>
       <button>Annulla</button>
     </form>
   </body>
