@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,14 +12,14 @@
     />
     <script src="./script.js" defer></script>
   </head>
-
   <body>
+    <!-- header -->
     <header class="bg-danger py-2">
       <div class="container">
         <img src="./img/Trenitalia_logo.png" alt="Trenitalia" class="img-fluid" width="250px" />
       </div>
     </header>
-
+    <!-- sezione calcolo biglietto -->
     <div class="container card m-4">
       <h1 class="m-4 card-header">Calcola il tuo biglietto</h1>
       <form id="ticket-form" action="#" class="row m-4 g-3">
@@ -47,8 +47,9 @@
         </div>
       </form>
     </div>
+    <!-- sezione biglietto d-none -->
     <div class="container m-4">
-      <div id="ticket" class="card">
+      <div id="ticket" class="card d-none">
         <div class="card-header bg-dark text-white">
           <h2 class="h5 mb-0">Il tuo biglietto</h2>
         </div>
